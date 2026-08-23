@@ -4,26 +4,28 @@ import { Instagram, Linkedin, Youtube, MessageSquare, ArrowUpRight, Mail } from 
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-900 border-t border-white/5 pt-16 pb-12 relative overflow-hidden">
-      {/* Glow Ambient background */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-gold-500/5 blur-[120px] pointer-events-none rounded-full" />
+    <footer className="bg-[#050508] border-t border-purple-500/10 pt-16 pb-12 relative overflow-hidden">
+      {/* Ambient purple background glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-purple-600/10 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-purple-500/10">
           {/* Col 1: Brand & Positioning */}
-          <div className="md:col-span-2 space-y-4">
-            <Link to="/" className="inline-flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-400 to-amber-700 p-[1px]">
-                <div className="w-full h-full bg-dark-900 rounded-[11px] flex items-center justify-center">
-                  <span className="font-heading font-extrabold text-sm text-gold-400">N3D</span>
-                </div>
+          <div className="md:col-span-2 space-y-4 text-left">
+            <Link to="/" className="inline-flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-full overflow-hidden p-[1px] bg-gradient-to-br from-purple-400 to-purple-700 shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform">
+                <img
+                  src="/assets/logo.png"
+                  alt="N3D Logo"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
-              <span className="font-heading font-bold text-white tracking-wide text-lg">
-                NOUMAN — 3D VISUALS
+              <span className="font-heading font-extrabold text-white tracking-wide text-lg group-hover:text-purple-300 transition-colors">
+                NOUMAN — 3D ARTIST
               </span>
             </Link>
-            <p className="text-slate-400 text-sm max-w-md leading-relaxed">
-              Premium 3D Product Visualization & Cinematic Motion Specialist. Bringing products to life with photorealistic rendering, precision lighting, and high-impact visual storytelling.
+            <p className="text-purple-200/70 text-sm max-w-md leading-relaxed">
+              3D Product Visualization Artist creating high-quality product visuals and animations that help brands showcase products with impact.
             </p>
 
             {/* Direct WhatsApp Contact Button */}
@@ -32,9 +34,9 @@ const Footer = () => {
                 href="https://wa.me/923000000000?text=Hello%20Nouman,%20I'm%20interested%20in%203D%20Product%20Visualization"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-semibold transition-all group"
+                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-purple-950/60 hover:bg-purple-900/60 border border-purple-500/30 text-purple-300 text-xs font-semibold transition-all group"
               >
-                <MessageSquare className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <MessageSquare className="w-4 h-4 text-purple-400 group-hover:scale-110 transition-transform" />
                 <span>Chat on WhatsApp</span>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
@@ -42,27 +44,27 @@ const Footer = () => {
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-gold-400">Navigation</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
+          <div className="space-y-3 text-left">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-purple-400">Navigation</h4>
+            <ul className="space-y-2 text-sm text-purple-200/80">
               <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/work" className="hover:text-white transition-colors">Visual Work & Motion</Link></li>
-              <li><Link to="/expertise" className="hover:text-white transition-colors">Technical Expertise</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">About Nouman</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact & Inquiry</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">About Me</Link></li>
+              <li><Link to="/work" className="hover:text-white transition-colors">My Work</Link></li>
+              <li><a href="/#services" className="hover:text-white transition-colors">Services</a></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           {/* Col 3: Social Profiles & Direct Mail */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-gold-400">Connect</h4>
+          <div className="space-y-4 text-left">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-purple-400">Connect</h4>
             <div className="flex items-center gap-3">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="p-2.5 rounded-xl bg-white/5 hover:bg-gold-500/10 border border-white/10 hover:border-gold-500/30 text-slate-300 hover:text-gold-400 transition-all"
+                className="p-2.5 rounded-full bg-purple-950/50 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -71,7 +73,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="p-2.5 rounded-xl bg-white/5 hover:bg-gold-500/10 border border-white/10 hover:border-gold-500/30 text-slate-300 hover:text-gold-400 transition-all"
+                className="p-2.5 rounded-full bg-purple-950/50 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -80,7 +82,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="p-2.5 rounded-xl bg-white/5 hover:bg-gold-500/10 border border-white/10 hover:border-gold-500/30 text-slate-300 hover:text-gold-400 transition-all"
+                className="p-2.5 rounded-full bg-purple-950/50 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110"
               >
                 <Youtube className="w-4 h-4" />
               </a>
@@ -88,9 +90,9 @@ const Footer = () => {
             <div className="pt-2">
               <a
                 href="mailto:nouman3dvisuals@gmail.com"
-                className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-gold-400 transition-colors"
+                className="inline-flex items-center gap-2 text-xs text-purple-300 hover:text-white transition-colors"
               >
-                <Mail className="w-3.5 h-3.5 text-gold-400" />
+                <Mail className="w-3.5 h-3.5 text-purple-400" />
                 <span>nouman3dvisuals@gmail.com</span>
               </a>
             </div>
@@ -98,10 +100,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} N3D — Nouman. All rights reserved.</p>
-          <p className="text-[11px] text-slate-600">
-            Crafted for Premium Brands, Art Directors & Recruiters worldwide.
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-purple-400/60">
+          <p>© {new Date().getFullYear()} NOUMAN — 3D ARTIST. All rights reserved.</p>
+          <p className="text-[11px]">
+            High-Impact 3D Product Visualization & Animation.
           </p>
         </div>
       </div>

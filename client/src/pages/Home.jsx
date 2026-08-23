@@ -1,285 +1,307 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Image as ImageIcon, Layers, Cpu, Video, ShieldCheck, MessageSquare } from 'lucide-react';
+import { 
+  ArrowRight, 
+  Sparkles, 
+  Box, 
+  Video, 
+  Layers, 
+  Disc, 
+  Sun, 
+  Camera, 
+  Check, 
+  Instagram, 
+  Linkedin, 
+  Youtube, 
+  Mail 
+} from 'lucide-react';
 
 const Home = () => {
-
   return (
     <div className="space-y-24 pb-20">
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        {/* Glow ambient spots */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-purple-500/15 blur-[140px] pointer-events-none rounded-full" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-950/40 border border-purple-500/30 text-purple-300 text-xs font-semibold uppercase tracking-widest backdrop-blur-md shadow-lg shadow-purple-500/10">
-            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-            <span>3D Product Visualization Specialist</span>
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-28 overflow-hidden min-h-[80vh] flex items-center">
+        {/* Glow ambient background spots */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[300px] bg-purple-600/20 blur-[130px] pointer-events-none rounded-full" />
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[300px] bg-purple-400/20 blur-[120px] pointer-events-none rounded-full" />
+
+        {/* Right Half Background Image (Hero Keyboard) */}
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 pointer-events-none z-0 overflow-hidden flex items-center justify-end">
+          <div className="relative w-full h-full">
+            <img
+              src="/assets/hero-keyboard.png"
+              alt="3D RGB Mechanical Keyboard Background Render"
+              className="w-full h-full object-cover object-left opacity-40 lg:opacity-75 transform lg:translate-x-10 scale-105"
+            />
+            {/* Seamless Blending Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#050508] via-[#050508]/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-[#050508]/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#050508] via-transparent to-[#050508]" />
+            <div className="absolute inset-0 bg-purple-950/20 mix-blend-overlay" />
           </div>
+        </div>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-5xl mx-auto leading-[1.1] font-heading text-purple-100">
-            Elevating Physical Products into <span className="purple-gradient-text">Photorealistic 3D Experiences</span>
-          </h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              {/* Category Pill Tag */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-semibold uppercase tracking-widest backdrop-blur-md shadow-lg shadow-purple-950/40">
+                <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                <span>3D PRODUCT VISUALIZATION ARTIST</span>
+              </div>
 
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg text-purple-200 max-w-2xl mx-auto font-normal leading-relaxed">
-            Crafting luxury static imagery and cinematic product animations for brands, creative directors, and agencies worldwide.
-          </p>
+              {/* Main Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] font-heading text-white">
+                3D Product <span className="purple-gradient-text">Visualization</span>
+                <br />
+                <span className="text-2xl sm:text-4xl lg:text-5xl text-purple-300 font-bold block mt-2">
+                  That Makes Products <span className="text-purple-400">Stand Out.</span>
+                </span>
+              </h1>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link
-              to="/work"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 via-purple-500 to-fuchsia-600 text-purple-950 font-bold text-sm shadow-xl shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 group"
-            >
-              <span>Explore Portfolio Work</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+              {/* Subtitle Paragraph */}
+              <p className="text-base sm:text-lg text-purple-200/90 max-w-xl font-normal leading-relaxed">
+                I create high-quality 3D product visuals and animations that help brands showcase their products with impact and drive real results.
+              </p>
 
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel hover:bg-purple-900/30 text-purple-200 font-semibold text-sm border border-purple-500/30 hover:border-purple-400 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              <span>Request Project Inquiry</span>
-            </Link>
-          </div>
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <Link
+                  to="/work"
+                  className="px-7 py-3.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-xl shadow-purple-600/30 hover:shadow-purple-500/50 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2 group"
+                >
+                  <span>View My Work</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
 
-          {/* Key Metric Pills */}
-          <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-            <div className="glass-panel p-4 rounded-2xl border border-purple-500/20">
-              <span className="text-2xl font-extrabold text-purple-400 font-heading">100%</span>
-              <p className="text-xs text-purple-300 mt-1">CGI Photorealism Precision</p>
-            </div>
-            <div className="glass-panel p-4 rounded-2xl border border-purple-500/20">
-              <span className="text-2xl font-extrabold text-purple-200 font-heading">DaVinci</span>
-              <p className="text-xs text-purple-300 mt-1">Color Grading & Compositing</p>
-            </div>
-            <div className="glass-panel p-4 rounded-2xl border border-purple-500/20">
-              <span className="text-2xl font-extrabold text-purple-400 font-heading">4K UHD</span>
-              <p className="text-xs text-purple-300 mt-1">Cinematic Render Resolution</p>
-            </div>
-            <div className="glass-panel p-4 rounded-2xl border border-purple-500/20">
-              <span className="text-2xl font-extrabold text-purple-200 font-heading">AI-Enhanced</span>
-              <p className="text-xs text-purple-300 mt-1">Efficient Creative Workflow</p>
+                <Link
+                  to="/contact"
+                  className="px-7 py-3.5 rounded-full bg-purple-950/60 hover:bg-purple-900/60 text-purple-200 font-semibold text-sm border border-purple-500/30 hover:border-purple-400 transition-all duration-300 flex items-center gap-2 backdrop-blur-md"
+                >
+                  <span>Let's Work Together</span>
+                  <ArrowRight className="w-4 h-4 text-purple-400" />
+                </Link>
+              </div>
+
+              {/* Social Links Bar */}
+              <div className="pt-6 flex items-center gap-4 border-t border-purple-500/10">
+                <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">Follow Me</span>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
+                  >
+                    <Youtube className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SLEEK SKILLS & INDUSTRY TOOLS SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      {/* SERVICES SECTION */}
+      <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 scroll-mt-28">
         <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/40 border border-purple-500/30 text-purple-300 text-xs font-semibold uppercase tracking-widest">
-            <Cpu className="w-3.5 h-3.5 text-purple-400" />
-            <span>Tools & Technical Stack</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-purple-100">
-            Core Skills & Industry Software
+          <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">WHAT I DO</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+            My <span className="purple-gradient-text">Services</span>
           </h2>
-          <p className="text-sm text-purple-300 leading-relaxed">
-            Leveraging industry-standard 3D suites, physically-based render engines, and post-production software.
-          </p>
+          <div className="w-16 h-1 bg-purple-500 mx-auto rounded-full" />
         </div>
 
-        {/* Software & Tools Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          <div className="glass-panel p-5 rounded-2xl border border-purple-500/20 hover:border-purple-400 transition-all text-center space-y-3 group">
-            <div className="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-300 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Layers className="w-6 h-6 text-purple-400" />
+        {/* 6 Card Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Card 1 */}
+          <div className="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 space-y-4 group hover:-translate-y-1 shadow-lg shadow-purple-950/20">
+            <div className="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              <Box className="w-6 h-6" />
             </div>
-            <h3 className="text-sm font-bold text-purple-100">Blender</h3>
-            <p className="text-[11px] text-purple-300">3D Modeling, Cycles Render Engine & Geometry Nodes</p>
-          </div>
-
-          <div className="glass-panel p-5 rounded-2xl border border-purple-500/20 hover:border-purple-400 transition-all text-center space-y-3 group">
-            <div className="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-300 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Sparkles className="w-6 h-6 text-purple-400" />
-            </div>
-            <h3 className="text-sm font-bold text-purple-100">Cinema 4D</h3>
-            <p className="text-[11px] text-purple-300">Commercial Visualization, Octane & Redshift Renders</p>
-          </div>
-
-          <div className="glass-panel p-5 rounded-2xl border border-purple-500/20 hover:border-purple-400 transition-all text-center space-y-3 group">
-            <div className="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-300 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Video className="w-5 h-5 text-purple-400" />
-            </div>
-            <h3 className="text-sm font-bold text-purple-100">DaVinci Resolve</h3>
-            <p className="text-[11px] text-purple-300">ACES Color Grading, Compositing & Video Post</p>
-          </div>
-
-          <div className="glass-panel p-5 rounded-2xl border border-purple-500/20 hover:border-purple-400 transition-all text-center space-y-3 group">
-            <div className="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-300 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-              <ImageIcon className="w-5 h-5 text-purple-400" />
-            </div>
-            <h3 className="text-sm font-bold text-purple-100">Substance Painter</h3>
-            <p className="text-[11px] text-purple-300">PBR Texturing, UV Maps & Micro-Surface Roughness</p>
-          </div>
-
-          <div className="glass-panel p-5 rounded-2xl border border-purple-500/20 hover:border-purple-400 transition-all text-center space-y-3 group col-span-2 sm:col-span-1">
-            <div className="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-300 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Cpu className="w-5 h-5 text-purple-400" />
-            </div>
-            <h3 className="text-sm font-bold text-purple-100">AI Creative Workflow</h3>
-            <p className="text-[11px] text-purple-300">HDRI Generation, Texture Synthesis & Rapid Lookdev</p>
-          </div>
-        </div>
-
-        {/* Skill Badges Bar */}
-        <div className="flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto pt-2">
-          {[
-            'Glass Refraction & Liquid Caustics',
-            'Subsurface Scattering (SSS)',
-            'Studio Rim & Softbox Lighting',
-            'Product Splash Physics',
-            '4K UHD Render Master',
-            'Exploded Product View'
-          ].map((tag, idx) => (
-            <span key={idx} className="px-3.5 py-1.5 rounded-full bg-purple-950/40 border border-purple-500/30 text-purple-200 text-xs font-medium">
-              ✨ {tag}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* CORE EXPERTISE & CAPABILITIES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="glass-panel p-8 md:p-12 rounded-3xl border border-purple-500/20 space-y-10 relative overflow-hidden">
-          <div className="space-y-3 max-w-2xl">
-            <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">Specialized Capabilities</span>
-            <h2 className="text-3xl font-extrabold font-heading text-purple-100">
-              Full-Stack 3D Production Pipeline
-            </h2>
-            <p className="text-sm text-purple-300 leading-relaxed">
-              From raw product CAD/dimensions to final color-graded commercials, every asset is crafted with meticulous attention to realism.
+            <h3 className="text-lg font-bold text-white font-heading">3D Product Visualization</h3>
+            <p className="text-sm text-purple-200/80 leading-relaxed">
+              High quality renders that bring your products to life.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="space-y-2 p-5 rounded-2xl bg-dark-800/90 border border-purple-500/15">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center mb-3">
-                <Layers className="w-5 h-5" />
+          {/* Card 2 */}
+          <div className="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 space-y-4 group hover:-translate-y-1 shadow-lg shadow-purple-950/20">
+            <div className="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              <Video className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white font-heading">Product Animation</h3>
+            <p className="text-sm text-purple-200/80 leading-relaxed">
+              Engaging animations that showcase features and details.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 space-y-4 group hover:-translate-y-1 shadow-lg shadow-purple-950/20">
+            <div className="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              <Layers className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white font-heading">3D Modeling</h3>
+            <p className="text-sm text-purple-200/80 leading-relaxed">
+              Clean, optimized and production ready 3D models.
+            </p>
+          </div>
+
+          {/* Card 4 */}
+          <div className="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 space-y-4 group hover:-translate-y-1 shadow-lg shadow-purple-950/20">
+            <div className="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              <Disc className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white font-heading">Materials & Texturing</h3>
+            <p className="text-sm text-purple-200/80 leading-relaxed">
+              Realistic materials and textures that add detail and depth.
+            </p>
+          </div>
+
+          {/* Card 5 */}
+          <div className="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 space-y-4 group hover:-translate-y-1 shadow-lg shadow-purple-950/20">
+            <div className="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              <Sun className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white font-heading">Lighting & Rendering</h3>
+            <p className="text-sm text-purple-200/80 leading-relaxed">
+              Studio quality lighting and photorealistic rendering.
+            </p>
+          </div>
+
+          {/* Card 6 */}
+          <div className="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 space-y-4 group hover:-translate-y-1 shadow-lg shadow-purple-950/20">
+            <div className="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              <Camera className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white font-heading">Camera & Composition</h3>
+            <p className="text-sm text-purple-200/80 leading-relaxed">
+              Cinematic camera angles and perfect composition.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT ME SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          {/* Left Column: Profile Card */}
+          <div className="md:col-span-5 relative">
+            <div className="glass-panel p-5 rounded-3xl border border-purple-500/30 bg-[#0e0a16]/90 relative z-10 space-y-4 shadow-2xl shadow-purple-950/50">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-dark-900 border border-purple-500/20 relative group">
+                <img
+                  src="/assets/nouman-profile.jpg"
+                  alt="Nouman 3D Artist Portrait"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/80 via-transparent to-transparent" />
               </div>
-              <h3 className="text-base font-bold text-purple-100">3D Modeling & CAD Clean</h3>
-              <p className="text-xs text-purple-300 leading-relaxed">
-                Precision topology for perfume bottles, tech gadgets, watches, and complex skincare packaging.
-              </p>
+              <div className="text-center pt-1 pb-2">
+                <h3 className="text-xl font-extrabold text-white font-heading tracking-wide">Nouman 3D Artist</h3>
+                <p className="text-xs text-purple-400 font-semibold mt-0.5">3D Product Visualization Specialist</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Bio & Highlights */}
+          <div className="md:col-span-7 space-y-6">
+            <div className="space-y-2">
+              <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">ABOUT ME</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+                Crafting Visuals That <span className="text-purple-400">Sell.</span>
+              </h2>
             </div>
 
-            <div className="space-y-2 p-5 rounded-2xl bg-dark-800/90 border border-purple-500/15">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center mb-3">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold text-purple-100">Texturing & Procedural Shading</h3>
-              <p className="text-xs text-purple-300 leading-relaxed">
-                Subsurface scattering, micro-roughness, brushed metals, glass caustics, and foil embossing.
-              </p>
-            </div>
+            <p className="text-purple-200/90 text-base leading-relaxed">
+              I'm a 3D product visualization artist who helps brands present their products in the best possible way. From realistic renders to engaging animations, I focus on quality, detail and visuals that connect.
+            </p>
 
-            <div className="space-y-2 p-5 rounded-2xl bg-dark-800/90 border border-purple-500/15">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center mb-3">
-                <Video className="w-5 h-5" />
+            {/* Pill Tags Grid */}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="glass-panel px-4 py-3 rounded-xl border border-purple-500/20 flex items-center gap-2.5 text-sm font-semibold text-white">
+                <Check className="w-4 h-4 text-purple-400" />
+                <span>Detail Oriented</span>
               </div>
-              <h3 className="text-base font-bold text-purple-100">Cinematic Product Animation</h3>
-              <p className="text-xs text-purple-300 leading-relaxed">
-                Dynamic camera sweeps, liquid splash physics, exploded assembly views, and lighting transitions.
-              </p>
-            </div>
-
-            <div className="space-y-2 p-5 rounded-2xl bg-dark-800/90 border border-purple-500/15">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center mb-3">
-                <Cpu className="w-5 h-5" />
+              <div className="glass-panel px-4 py-3 rounded-xl border border-purple-500/20 flex items-center gap-2.5 text-sm font-semibold text-white">
+                <Check className="w-4 h-4 text-purple-400" />
+                <span>High Quality</span>
               </div>
-              <h3 className="text-base font-bold text-purple-100">DaVinci Resolve Post & Color</h3>
-              <p className="text-xs text-purple-300 leading-relaxed">
-                Professional film color grading, ACES color management, compositing, motion blur, and final output.
-              </p>
-            </div>
-
-            <div className="space-y-2 p-5 rounded-2xl bg-dark-800/90 border border-purple-500/15">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center mb-3">
-                <ShieldCheck className="w-5 h-5" />
+              <div className="glass-panel px-4 py-3 rounded-xl border border-purple-500/20 flex items-center gap-2.5 text-sm font-semibold text-white">
+                <Check className="w-4 h-4 text-purple-400" />
+                <span>On Time Delivery</span>
               </div>
-              <h3 className="text-base font-bold text-purple-100">AI-Assisted Workflow</h3>
-              <p className="text-xs text-purple-300 leading-relaxed">
-                Accelerated concept generation, HDRI lighting synthesis, and texture enhancement.
-              </p>
-            </div>
-
-            <div className="space-y-2 p-5 rounded-2xl bg-dark-800/90 border border-purple-500/15">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center mb-3">
-                <MessageSquare className="w-5 h-5" />
+              <div className="glass-panel px-4 py-3 rounded-xl border border-purple-500/20 flex items-center gap-2.5 text-sm font-semibold text-white">
+                <Check className="w-4 h-4 text-purple-400" />
+                <span>Client Focused</span>
               </div>
-              <h3 className="text-base font-bold text-purple-100">Direct Brand Communication</h3>
-              <p className="text-xs text-purple-300 leading-relaxed">
-                Clear milestones, progress clay-renders, and reliable turnaround for tight launch dates.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PRODUCTION PROCESS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">Methodology</span>
-          <h2 className="text-3xl font-extrabold font-heading text-purple-100">
-            The 5-Step Production Workflow
-          </h2>
-          <p className="text-sm text-purple-300">
-            A structured creative process that guarantees studio-quality results every single time.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-          {[
-            { step: '01', title: 'Briefing & Moodboard', desc: 'Understanding brand aesthetics, dimensions, lighting references, and target vision.' },
-            { step: '02', title: '3D Modeling & Setup', desc: 'Building high-fidelity 3D geometry and setting up accurate camera compositions.' },
-            { step: '03', title: 'Shading & Materials', desc: 'Crafting physically accurate materials, glass refractions, and surface bump textures.' },
-            { step: '04', title: 'Lighting & Render', desc: 'Studio rim lighting, soft reflections, caustics simulation, and high-res rendering.' },
-            { step: '05', title: 'DaVinci Post & Delivery', desc: 'Color grading, compositing, final video polish, and delivering high-res master files.' }
-          ].map((item) => (
-            <div key={item.step} className="glass-panel p-5 rounded-2xl border border-purple-500/15 space-y-3 relative group hover:border-purple-400 transition-colors">
-              <span className="text-2xl font-extrabold text-purple-400 font-heading">{item.step}</span>
-              <h3 className="text-sm font-bold text-purple-100">{item.title}</h3>
-              <p className="text-xs text-purple-300 leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CONTACT CTA BANNER */}
+      {/* STATS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel p-8 md:p-14 rounded-3xl border border-purple-500/30 bg-gradient-to-r from-dark-800 via-dark-800 to-dark-700 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-3 text-left max-w-xl">
-            <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">Ready to Elevate Your Product?</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-purple-100">
-              Let's Create Photorealistic Visuals Together
-            </h2>
-            <p className="text-purple-200 text-sm leading-relaxed">
-              Available for brand commissions, agency freelance, and long-term remote roles.
+        <div className="glass-panel p-8 md:p-10 rounded-3xl border border-purple-500/25 bg-gradient-to-r from-[#0b0a10] via-[#0e0a16] to-[#0b0a10] shadow-xl shadow-purple-950/30">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="space-y-1">
+              <span className="text-3xl sm:text-4xl font-extrabold text-purple-400 font-heading">20+</span>
+              <p className="text-xs sm:text-sm font-semibold text-purple-200/80">Projects Completed</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-3xl sm:text-4xl font-extrabold text-purple-400 font-heading">10+</span>
+              <p className="text-xs sm:text-sm font-semibold text-purple-200/80">Happy Clients</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-3xl sm:text-4xl font-extrabold text-purple-400 font-heading">2+</span>
+              <p className="text-xs sm:text-sm font-semibold text-purple-200/80">Years Experience</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-3xl sm:text-4xl font-extrabold text-purple-400 font-heading">100%</span>
+              <p className="text-xs sm:text-sm font-semibold text-purple-200/80">Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BOTTOM CTA BANNER */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="glass-panel p-8 md:p-12 rounded-3xl border border-purple-500/30 bg-gradient-to-r from-purple-950/40 via-dark-800 to-purple-950/40 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl shadow-purple-950/50">
+          <div className="flex items-center gap-4 text-left">
+            <div className="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 text-purple-400 flex items-center justify-center shrink-0">
+              <Mail className="w-6 h-6" />
+            </div>
+            <p className="text-base sm:text-xl font-bold text-white font-heading">
+              Have a project in mind? Let's create something amazing together.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <Link
-              to="/contact"
-              className="px-8 py-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-purple-950 font-bold text-sm shadow-xl shadow-purple-500/25 transition-all flex items-center justify-center gap-2"
-            >
-              <span>Get In Touch</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a
-              href="https://wa.me/923000000000?text=Hi%20Nouman,%20let's%20discuss%20a%203D%20project"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-4 rounded-xl bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/40 text-purple-300 text-sm font-semibold transition-all flex items-center justify-center gap-2"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>WhatsApp Chat</span>
-            </a>
-          </div>
+          <Link
+            to="/contact"
+            className="shrink-0 px-8 py-4 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-xl shadow-purple-600/30 hover:scale-[1.02] transition-all flex items-center gap-2"
+          >
+            <span>Let's Work Together</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </div>

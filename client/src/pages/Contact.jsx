@@ -70,11 +70,10 @@ const Contact = () => {
 
           {status && (
             <div
-              className={`p-4 rounded-xl text-xs flex items-center gap-3 ${
-                status.type === 'success'
+              className={`p-4 rounded-xl text-xs flex items-center gap-3 ${status.type === 'success'
                   ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400'
                   : 'bg-rose-500/10 border border-rose-500/30 text-rose-400'
-              }`}
+                }`}
             >
               {status.type === 'success' ? <CheckCircle2 className="w-5 h-5 flex-shrink-0" /> : <AlertCircle className="w-5 h-5 flex-shrink-0" />}
               <span>{status.text}</span>
@@ -190,7 +189,7 @@ const Contact = () => {
             </p>
 
             <a
-              href="https://wa.me/923000000000?text=Hello%20Nouman,%20I'd%20like%20to%20discuss%20a%203D%20product%20visualization%20project"
+              href="https://wa.me/923110565058?text=Hello%20Nouman,%20I'd%20like%20to%20discuss%20a%203D%20product%20visualization%20project"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-dark-900 font-bold text-xs shadow-lg shadow-emerald-500/20 transition-all flex items-center justify-center gap-2"

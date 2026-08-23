@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sparkles, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,15 +17,15 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Work', path: '/work' },
-    { name: 'Expertise', path: '/expertise' },
     { name: 'About', path: '/about' },
+    { name: 'Work', path: '/work' },
+    { name: 'Services', path: '/#services' },
     { name: 'Contact', path: '/contact' },
   ];
 
   const isActive = (path) => {
     if (path === '/' && location.pathname === '/') return true;
-    if (path !== '/' && location.pathname.startsWith(path)) return true;
+    if (path !== '/' && path !== '/#services' && location.pathname.startsWith(path)) return true;
     return false;
   };
 
@@ -33,62 +33,76 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark-900/85 backdrop-blur-md border-b border-white/5 py-4 shadow-2xl shadow-black/50'
-          : 'bg-transparent py-6'
+          ? 'bg-[#050508]/90 backdrop-blur-md border-b border-purple-500/10 py-3 shadow-2xl shadow-purple-950/20'
+          : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo & Brand */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 via-gold-500 to-amber-700 p-[1px] shadow-lg shadow-gold-500/10 group-hover:shadow-gold-500/25 transition-all">
-            <div className="w-full h-full bg-dark-900 rounded-[11px] flex items-center justify-center">
-              <span className="font-heading font-extrabold text-lg text-white group-hover:text-gold-400 transition-colors">
-                N3D
-              </span>
-            </div>
+          <div className="w-10 h-10 rounded-full overflow-hidden p-[1px] bg-gradient-to-br from-purple-400 to-purple-700 shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform">
+            <img
+              src="/assets/logo.png"
+              alt="N3D Logo"
+              className="w-full h-full object-cover rounded-full"
+            />
           </div>
           <div className="flex flex-col">
-            <span className="font-heading font-bold text-white tracking-wider text-sm sm:text-base">
+            <span className="font-heading font-extrabold text-white tracking-wider text-base sm:text-lg leading-tight group-hover:text-purple-300 transition-colors">
               NOUMAN
             </span>
-            <span className="text-[10px] text-slate-400 uppercase tracking-widest -mt-1 font-medium">
-              3D Visualization
+            <span className="text-[10px] text-purple-400 font-bold uppercase tracking-widest -mt-0.5">
+              3D ARTIST
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation — PUBLIC ONLY (No admin link) */}
-        <nav className="hidden md:flex items-center gap-1 bg-dark-800/60 p-1.5 rounded-full border border-white/5 backdrop-blur-md">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
-                isActive(link.path)
-                  ? 'bg-gradient-to-r from-gold-500 to-amber-600 text-dark-900 shadow-md shadow-gold-500/20 font-bold'
-                  : 'text-slate-300 hover:text-white hover:bg-white/5'
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-1 bg-[#0b0a10]/80 px-4 py-2 rounded-full border border-purple-500/20 backdrop-blur-md">
+          {navLinks.map((link) => {
+            const isAnchor = link.path.startsWith('/#');
+            if (isAnchor) {
+              return (
+                <a
+                  key={link.name}
+                  href={link.path}
+                  className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-purple-200 hover:text-white hover:bg-purple-500/10 transition-all"
+                >
+                  {link.name}
+                </a>
+              );
+            }
+            return (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all ${
+                  isActive(link.path)
+                    ? 'bg-purple-600 text-white shadow-md shadow-purple-500/30 font-bold'
+                    : 'text-purple-200 hover:text-white hover:bg-purple-500/10'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Action CTA */}
         <div className="hidden md:flex items-center gap-4">
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-gold-500/40 text-xs font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/10"
+            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-[1.02]"
           >
-            <span>Start a Project</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-gold-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <span>Let's Work Together</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg bg-dark-800 border border-white/10 text-slate-300 hover:text-white"
+          className="md:hidden p-2 rounded-xl bg-dark-800 border border-purple-500/20 text-purple-200 hover:text-white"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -97,29 +111,44 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-dark-900/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
-                isActive(link.path)
-                  ? 'bg-gold-500 text-dark-900 font-bold'
-                  : 'text-slate-300 hover:bg-white/5'
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="md:hidden bg-[#050508]/95 backdrop-blur-xl border-b border-purple-500/20 px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-4">
+          {navLinks.map((link) => {
+            const isAnchor = link.path.startsWith('/#');
+            if (isAnchor) {
+              return (
+                <a
+                  key={link.name}
+                  href={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-4 py-2.5 rounded-xl text-sm font-semibold text-purple-200 hover:bg-purple-500/10"
+                >
+                  {link.name}
+                </a>
+              );
+            }
+            return (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                  isActive(link.path)
+                    ? 'bg-purple-600 text-white font-bold'
+                    : 'text-purple-200 hover:bg-purple-500/10'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
           <div className="pt-2">
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gold-500 text-dark-900 font-bold text-sm shadow-lg shadow-gold-500/20"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-purple-600 text-white font-bold text-sm shadow-lg shadow-purple-500/25"
             >
-              <span>Get In Touch</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <span>Let's Work Together</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
