@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Environment variables & secrets (CRITICAL: NEVER COMMIT TO GITHUB)
+.env
+.env*.local
+*.env
+
+# Runtime uploads
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db

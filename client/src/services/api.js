@@ -1,7 +1,8 @@
 import axios from 'axios';
 import emailjs from '@emailjs/browser';
 
-const API_BASE_URL = '/api';
+const rawApiUrl = import.meta.env.VITE_API_URL;
+const API_BASE_URL = rawApiUrl ? `${rawApiUrl.replace(/\/$/, '')}/api` : '/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

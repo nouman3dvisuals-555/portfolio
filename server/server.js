@@ -14,8 +14,34 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// Trust reverse proxies (Render, Vercel, Railway) for secure HTTPS protocols
+app.set('trust proxy', 1);
+
+// CORS configuration supporting local dev and deployed frontend domains
+const clientUrl = process.env.CLIENT_URL;
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+  clientUrl
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like health checks, curl, mobile)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes('*') || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+      return callback(null, true);
+    }
+    // Allow Vercel preview or production deployments
+    if (origin.endsWith('.vercel.app') || (clientUrl && origin === clientUrl.replace(/\/$/, ''))) {
+      return callback(null, true);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
