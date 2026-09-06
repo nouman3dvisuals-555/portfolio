@@ -18,104 +18,96 @@ import {
 
 const Home = () => {
   return (
-    <div className="space-y-24 pb-20">
+    <div className="space-y-12 md:space-y-16 pb-20">
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-28 overflow-hidden min-h-[80vh] flex items-center">
-        {/* Glow ambient background spots */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[300px] bg-purple-600/20 blur-[130px] pointer-events-none rounded-full" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[300px] bg-purple-400/20 blur-[120px] pointer-events-none rounded-full" />
+      <section className="relative pt-28 pb-6 md:pt-28 md:pb-10 overflow-hidden min-h-[70vh] flex items-center bg-[#050508]">
+        {/* Symmetrical subtle ambient glow centered across the hero section */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-purple-600/10 blur-[150px] pointer-events-none rounded-full" />
 
-        {/* Right Half Background Image (Hero Keyboard) */}
+        {/* Right Half Background Image (Hero RGB Keyboard) */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 pointer-events-none z-0 overflow-hidden flex items-center justify-end">
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full flex items-center justify-end">
             <img
               src="/assets/hero-keyboard.png"
               alt="3D RGB Mechanical Keyboard Background Render"
-              className="w-full h-full object-cover object-left opacity-40 lg:opacity-75 transform lg:translate-x-10 scale-105"
+              className="w-full max-w-[850px] object-contain object-right opacity-45 lg:opacity-75 transform lg:translate-x-12 scale-105"
             />
-            {/* Seamless Blending Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#050508] via-[#050508]/60 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-[#050508]/80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#050508] via-transparent to-[#050508]" />
-            <div className="absolute inset-0 bg-purple-950/20 mix-blend-overlay" />
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-left">
-              {/* Category Pill Tag */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-semibold uppercase tracking-widest backdrop-blur-md shadow-lg shadow-purple-950/40">
-                <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-                <span>3D PRODUCT VISUALIZATION ARTIST</span>
-              </div>
+          {/* Content Column: Exactly 75% width on desktop */}
+          <div className="w-full lg:w-[75%] space-y-6 text-left">
+            {/* Category Pill Tag */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-semibold uppercase tracking-widest backdrop-blur-md shadow-lg shadow-purple-950/40">
+              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+              <span>3D PRODUCT VISUALIZATION ARTIST</span>
+            </div>
 
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] font-heading text-white">
-                3D Product <span className="purple-gradient-text">Visualization</span>
-                <br />
-                <span className="text-2xl sm:text-4xl lg:text-5xl text-purple-300 font-bold block mt-2">
-                  That Makes Products <span className="text-purple-400">Stand Out.</span>
-                </span>
-              </h1>
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] font-heading text-white">
+              3D Product <span className="purple-gradient-text">Visualization</span>
+              <br />
+              <span className="text-2xl sm:text-4xl lg:text-5xl text-purple-300 font-bold block mt-2">
+                That Makes Products <span className="text-purple-400">Stand Out.</span>
+              </span>
+            </h1>
 
-              {/* Subtitle Paragraph */}
-              <p className="text-base sm:text-lg text-purple-200/90 max-w-xl font-normal leading-relaxed">
-                I create high-quality 3D product visuals and animations that help brands showcase their products with impact and drive real results.
-              </p>
+            {/* Subtitle Paragraph */}
+            <p className="text-base sm:text-lg text-purple-200/90 max-w-2xl font-normal leading-relaxed">
+              I create high-quality 3D product visuals and animations that help brands showcase their products with impact and drive real results.
+            </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Link
-                  to="/work"
-                  className="px-7 py-3.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-xl shadow-purple-600/30 hover:shadow-purple-500/50 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2 group"
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link
+                to="/work"
+                className="px-7 py-3.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-xl shadow-purple-600/30 hover:shadow-purple-500/50 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2 group"
+              >
+                <span>View My Work</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                to="/contact"
+                className="px-7 py-3.5 rounded-full bg-purple-950/60 hover:bg-purple-900/60 text-purple-200 font-semibold text-sm border border-purple-500/30 hover:border-purple-400 transition-all duration-300 flex items-center gap-2 backdrop-blur-md"
+              >
+                <span>Let's Work Together</span>
+                <ArrowRight className="w-4 h-4 text-purple-400" />
+              </Link>
+            </div>
+
+            {/* Social Links Bar */}
+            <div className="pt-6 flex items-center gap-4 border-t border-purple-500/10 max-w-xl">
+              <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">Follow Me</span>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
                 >
-                  <span>View My Work</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-
-                <Link
-                  to="/contact"
-                  className="px-7 py-3.5 rounded-full bg-purple-950/60 hover:bg-purple-900/60 text-purple-200 font-semibold text-sm border border-purple-500/30 hover:border-purple-400 transition-all duration-300 flex items-center gap-2 backdrop-blur-md"
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
                 >
-                  <span>Let's Work Together</span>
-                  <ArrowRight className="w-4 h-4 text-purple-400" />
-                </Link>
-              </div>
-
-              {/* Social Links Bar */}
-              <div className="pt-6 flex items-center gap-4 border-t border-purple-500/10">
-                <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">Follow Me</span>
-                <div className="flex items-center gap-3">
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
-                  >
-                    <Instagram className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="https://youtube.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="YouTube"
-                    className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
-                  >
-                    <Youtube className="w-4 h-4" />
-                  </a>
-                </div>
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="p-2.5 rounded-full bg-purple-950/60 hover:bg-purple-600/30 border border-purple-500/20 text-purple-300 hover:text-white transition-all hover:scale-110 backdrop-blur-md"
+                >
+                  <Youtube className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -123,7 +115,7 @@ const Home = () => {
       </section>
 
       {/* SERVICES SECTION */}
-      <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 scroll-mt-28">
+      <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 scroll-mt-28">
         <div className="text-center space-y-3 max-w-2xl mx-auto">
           <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">WHAT I DO</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">

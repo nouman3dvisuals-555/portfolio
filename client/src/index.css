@@ -67,3 +67,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #a855f7;
 }
+
+@media (min-width: 768px) {
+  .md\:pt-40 {
+    padding-top: 7rem;
+  }
+}
