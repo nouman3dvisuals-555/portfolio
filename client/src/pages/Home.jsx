@@ -82,7 +82,7 @@ const Home = () => {
               <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">Follow Me</span>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/nouman.3d?stkn=MW82cXhrcXB4dXlveQ=="
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -91,7 +91,7 @@ const Home = () => {
                   <Instagram className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/nouman3d?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"

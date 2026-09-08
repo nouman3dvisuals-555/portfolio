@@ -224,20 +224,20 @@ const Contact = () => {
             <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">Official Social Profiles</h3>
             <div className="space-y-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/nouman.3d?stkn=MW82cXhrcXB4dXlveQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-dark-800 border border-white/5 hover:border-gold-500/30 text-xs text-slate-300 hover:text-white transition-all group"
               >
                 <div className="flex items-center gap-2.5">
                   <Instagram className="w-4 h-4 text-gold-400" />
-                  <span>Instagram (@nouman3dvisuals)</span>
+                  <span>Instagram (@nouman.3d)</span>
                 </div>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nouman3d?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-dark-800 border border-white/5 hover:border-gold-500/30 text-xs text-slate-300 hover:text-white transition-all group"

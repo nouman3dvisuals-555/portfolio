@@ -60,7 +60,7 @@ const Footer = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-purple-400">Connect</h4>
             <div className="flex items-center gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/nouman.3d?stkn=MW82cXhrcXB4dXlveQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -69,7 +69,7 @@ const Footer = () => {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nouman3d?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
