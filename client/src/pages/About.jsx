@@ -26,7 +26,7 @@ const About = () => {
           <div className="glass-panel p-6 rounded-3xl border border-purple-500/30 bg-[#0e0a16]/90 relative z-10 space-y-6 shadow-2xl shadow-purple-950/50">
             <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-dark-900 border border-purple-500/20 relative group">
               <img
-                src="/assets/nouman-profile.jpg"
+                src="/assets/nouman-profile.jpg?v=2"
                 alt="Nouman 3D Product Visualization Specialist"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
