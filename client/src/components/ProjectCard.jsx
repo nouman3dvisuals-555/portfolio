@@ -15,6 +15,7 @@ const resolveMediaUrl = (url) => {
 
 const ProjectCard = ({ project, onSelect }) => {
   const [isPlayingInline, setIsPlayingInline] = useState(false);
+  const [hasMediaError, setHasMediaError] = useState(false);
   const videoRef = useRef(null);
   const isVideo = project.mediaType === 'video';
 
@@ -45,34 +46,29 @@ const ProjectCard = ({ project, onSelect }) => {
   };
 
   return (
-    <div className="group glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col h-full border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 relative">
+    <div className="glass-panel rounded-2xl overflow-hidden border border-purple-500/20 hover:border-purple-400/50 transition-all duration-500 flex flex-col group hover:-translate-y-1 shadow-lg shadow-purple-950/20 bg-[#0e0a16]/90">
       {/* Media Box */}
-      <div
+      <div 
+        className="aspect-[16/10] sm:aspect-[16/9] w-full bg-dark-900 relative overflow-hidden cursor-pointer"
         onClick={handleMediaBoxClick}
-        className="relative aspect-[16/10] overflow-hidden bg-dark-900 cursor-pointer"
       >
-        {isVideo && isPlayingInline ? (
-          <div className="relative w-full h-full bg-black">
+        {isPlayingInline && isVideo ? (
+          <div className="w-full h-full relative bg-black flex items-center justify-center">
             <video
               ref={videoRef}
               src={mediaUrl}
-              controls
               autoPlay
+              controls
               playsInline
-              className="w-full h-full object-cover"
-              poster={thumbnailUrl || undefined}
+              className="w-full h-full object-contain"
               onEnded={() => setIsPlayingInline(false)}
-            >
-              Your browser does not support HTML5 video.
-            </video>
-
-            {/* Quick Action Overlay on Inline Player */}
-            <div className="absolute top-2 right-2 flex items-center gap-1.5 z-20">
+            />
+            <div className="absolute top-2 right-2 z-20 flex items-center gap-2">
               <button
                 type="button"
                 onClick={handleExpandModal}
                 className="p-1.5 rounded-lg bg-black/70 hover:bg-purple-600 text-white transition-colors"
-                title="Open in full theater modal"
+                title="Open full view"
               >
                 <Maximize2 className="w-3.5 h-3.5" />
               </button>
@@ -88,18 +84,28 @@ const ProjectCard = ({ project, onSelect }) => {
           </div>
         ) : (
           <>
-            {isVideo && (!thumbnailUrl || thumbnailUrl === mediaUrl || thumbnailUrl.endsWith('.mp4') || thumbnailUrl.endsWith('.webm')) ? (
+            {hasMediaError ? (
+              <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#160f26] via-[#0e0a16] to-[#07050d] border border-purple-500/20">
+                <div className="w-12 h-12 rounded-2xl bg-purple-950/80 border border-purple-500/30 flex items-center justify-center mb-2 shadow-lg shadow-purple-950/50">
+                  {isVideo ? <Film className="w-6 h-6 text-purple-400" /> : <ImageIcon className="w-6 h-6 text-purple-400" />}
+                </div>
+                <span className="text-xs font-bold text-white font-heading line-clamp-1">{project.title}</span>
+                <span className="text-[10px] text-purple-300/70 mt-1 uppercase tracking-wider">{project.category}</span>
+              </div>
+            ) : isVideo && (!thumbnailUrl || thumbnailUrl === mediaUrl || thumbnailUrl.endsWith('.mp4') || thumbnailUrl.endsWith('.webm')) ? (
               <video
                 src={`${mediaUrl}#t=0.001`}
                 preload="metadata"
                 muted
                 playsInline
+                onError={() => setHasMediaError(true)}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             ) : (
               <img
                 src={thumbnailUrl || mediaUrl}
                 alt={project.title}
+                onError={() => setHasMediaError(true)}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />

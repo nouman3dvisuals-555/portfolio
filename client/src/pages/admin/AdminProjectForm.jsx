@@ -253,15 +253,21 @@ const AdminProjectForm = () => {
         </div>
 
         {/* Media Asset Upload */}
-        <div className="glass-panel p-6 rounded-2xl border border-white/10 space-y-4">
-          <label className="text-xs font-bold text-slate-300">
-            Media File (Upload to External Object Storage) *
-          </label>
+        <div className="glass-panel p-6 rounded-2xl border border-purple-500/25 bg-[#0e0a16]/90 space-y-4">
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-purple-300 flex items-center justify-between">
+              <span>Media File (Photo or Video) *</span>
+              <span className="text-[11px] text-purple-400/80 font-normal">Supports Images & MP4/WebM Videos</span>
+            </label>
+            <p className="text-[11px] text-purple-300/70">
+              Upload a media file or enter a permanent direct link (e.g. Cloudinary, Vimeo, YouTube, Imgur, or Google Drive).
+            </p>
+          </div>
 
           <div className="space-y-3">
             <div className="flex items-center gap-4">
-              <label className="flex-grow flex items-center justify-center gap-2 p-4 rounded-xl border border-dashed border-white/20 hover:border-gold-500 bg-dark-800 cursor-pointer transition-colors text-xs text-slate-300">
-                <Upload className="w-4 h-4 text-gold-400" />
+              <label className="flex-grow flex items-center justify-center gap-2 p-4 rounded-xl border border-dashed border-purple-500/30 hover:border-purple-400 bg-purple-950/20 hover:bg-purple-950/40 cursor-pointer transition-all text-xs text-purple-200">
+                <Upload className="w-4 h-4 text-purple-400" />
                 <span>{uploading ? 'Uploading to Storage...' : 'Click to Upload Media File'}</span>
                 <input
                   type="file"
@@ -273,14 +279,14 @@ const AdminProjectForm = () => {
             </div>
 
             <div className="space-y-1">
-              <label className="text-[11px] text-slate-400">Or Direct Asset URL:</label>
+              <label className="text-[11px] text-purple-300/70">Or Direct Asset URL (Permanent CDN link):</label>
               <input
                 type="text"
                 name="mediaUrl"
                 value={formData.mediaUrl}
                 onChange={handleChange}
-                placeholder="https://your-object-storage.com/media/file.mp4"
-                className="w-full px-4 py-2.5 rounded-xl bg-dark-800 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500"
+                placeholder="https://res.cloudinary.com/... or direct image/video link"
+                className="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-purple-500/20 text-white text-xs focus:outline-none focus:border-purple-400"
               />
             </div>
           </div>
@@ -288,8 +294,8 @@ const AdminProjectForm = () => {
           {/* Live Preview Box */}
           {formData.mediaUrl && (
             <div className="pt-2">
-              <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Live Media Preview:</label>
-              <div className="w-full max-h-64 rounded-xl overflow-hidden bg-black border border-white/10 flex items-center justify-center">
+              <label className="text-[11px] font-bold text-purple-300 uppercase tracking-wider block mb-2">Live Media Preview:</label>
+              <div className="w-full max-h-64 rounded-xl overflow-hidden bg-black border border-purple-500/20 flex items-center justify-center">
                 {formData.mediaType === 'video' ? (
                   <video src={formData.mediaUrl} controls className="max-h-64 object-contain" />
                 ) : (
@@ -302,21 +308,21 @@ const AdminProjectForm = () => {
 
         {/* Video Thumbnail Image Section (For Video Projects) */}
         {formData.mediaType === 'video' && (
-          <div className="glass-panel p-6 rounded-2xl border border-gold-500/20 bg-gold-500/5 space-y-4">
+          <div className="glass-panel p-6 rounded-2xl border border-purple-500/25 bg-purple-950/20 space-y-4">
             <div className="space-y-1">
-              <label className="text-xs font-bold text-gold-400 flex items-center gap-2">
-                <ImageIcon className="w-4 h-4 text-gold-400" />
+              <label className="text-xs font-bold text-purple-300 flex items-center gap-2">
+                <ImageIcon className="w-4 h-4 text-purple-400" />
                 <span>Video Thumbnail Image (Custom Poster / Cover Image)</span>
               </label>
-              <p className="text-[11px] text-slate-400">
-                Upload a custom cover image or enter an image URL. If left empty, the <strong className="text-slate-200">video's first frame</strong> will automatically be set as the thumbnail.
+              <p className="text-[11px] text-purple-300/70">
+                Upload a custom cover image or enter an image URL. If left empty, the <strong className="text-purple-200">video's first frame</strong> will automatically be set as the thumbnail.
               </p>
             </div>
 
             <div className="space-y-3">
               <div className="flex items-center gap-4">
-                <label className="flex-grow flex items-center justify-center gap-2 p-3.5 rounded-xl border border-dashed border-white/20 hover:border-gold-500 bg-dark-800 cursor-pointer transition-colors text-xs text-slate-300">
-                  <Upload className="w-4 h-4 text-gold-400" />
+                <label className="flex-grow flex items-center justify-center gap-2 p-3.5 rounded-xl border border-dashed border-purple-500/30 hover:border-purple-400 bg-purple-950/30 cursor-pointer transition-colors text-xs text-purple-200">
+                  <Upload className="w-4 h-4 text-purple-400" />
                   <span>{uploading ? 'Uploading Thumbnail...' : 'Upload Custom Thumbnail Image'}</span>
                   <input
                     type="file"
@@ -328,14 +334,14 @@ const AdminProjectForm = () => {
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] text-slate-400">Or Direct Thumbnail Image URL:</label>
+                <label className="text-[11px] text-purple-300/70">Or Direct Thumbnail Image URL:</label>
                 <input
                   type="text"
                   name="thumbnailUrl"
                   value={formData.thumbnailUrl}
                   onChange={handleChange}
-                  placeholder="https://images.unsplash.com/photo-custom-cover.jpg"
-                  className="w-full px-4 py-2.5 rounded-xl bg-dark-800 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500"
+                  placeholder="https://images.unsplash.com/... or direct image link"
+                  className="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-purple-500/20 text-white text-xs focus:outline-none focus:border-purple-400"
                 />
               </div>
             </div>

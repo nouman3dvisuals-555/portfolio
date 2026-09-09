@@ -112,7 +112,7 @@ router.get('/projects', requireAdmin, async (req, res) => {
  * POST /api/admin/upload
  * Media Upload handler (Images / Videos) -> Returns external/static Storage URL
  */
-router.post('/upload', requireAdmin, upload.single('media'), (req, res) => {
+router.post('/upload', requireAdmin, upload.single('media'), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({
@@ -121,7 +121,7 @@ router.post('/upload', requireAdmin, upload.single('media'), (req, res) => {
       });
     }
 
-    const processed = processUploadedFile(req.file, req);
+    const processed = await processUploadedFile(req.file, req);
 
     res.json({
       success: true,

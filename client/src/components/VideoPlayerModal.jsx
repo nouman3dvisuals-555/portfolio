@@ -25,6 +25,7 @@ const VideoPlayerModal = ({ project, onClose }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
+  const [hasError, setHasError] = useState(false);
   const isVideo = project?.mediaType === 'video';
   const mediaUrl = resolveMediaUrl(project?.mediaUrl);
   const thumbnailUrl = resolveMediaUrl(project?.thumbnailUrl);
@@ -97,13 +98,24 @@ const VideoPlayerModal = ({ project, onClose }) => {
         <div className="overflow-y-auto flex-grow">
           {/* Media Player Container */}
           <div className="bg-black relative flex items-center justify-center min-h-[300px] max-h-[65vh]">
-            {isVideo ? (
+            {hasError ? (
+              <div className="flex flex-col items-center justify-center p-8 sm:p-12 text-center space-y-3 bg-[#0e0a16] w-full min-h-[280px]">
+                <div className="w-14 h-14 rounded-2xl bg-purple-950/80 border border-purple-500/30 flex items-center justify-center text-purple-400 shadow-lg shadow-purple-950/50">
+                  {isVideo ? <Film className="w-7 h-7" /> : <ImageIcon className="w-7 h-7" />}
+                </div>
+                <h3 className="text-white font-bold text-base font-heading">Media Asset Temporarily Unavailable</h3>
+                <p className="text-xs text-purple-300/80 max-w-md leading-relaxed">
+                  This media file may have been stored on an ephemeral server disk that restarted. Configure Cloudinary in the server environment or update the project with a permanent direct asset link in the Admin panel.
+                </p>
+              </div>
+            ) : isVideo ? (
               <video
                 ref={videoRef}
                 src={mediaUrl}
                 controls
                 autoPlay
                 playsInline
+                onError={() => setHasError(true)}
                 className="w-full max-h-[65vh] object-contain"
                 poster={thumbnailUrl || undefined}
               >
@@ -113,6 +125,7 @@ const VideoPlayerModal = ({ project, onClose }) => {
               <img
                 src={mediaUrl}
                 alt={project.title}
+                onError={() => setHasError(true)}
                 className="w-full max-h-[65vh] object-contain"
               />
             )}
